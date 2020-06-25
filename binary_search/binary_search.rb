@@ -11,10 +11,8 @@ class Array
         break
       elsif self[mid] < number
         min = mid + 1
-        next
       else self[mid] > number
         max = max - 1
-        next
       end
     end
     mid
