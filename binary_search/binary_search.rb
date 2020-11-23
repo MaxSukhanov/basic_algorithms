@@ -1,20 +1,11 @@
-require 'benchmark'
 class Array
-  def index_of_element(number)
+  def index_of element
     min = 0
     max = self.length - 1
-    mid = 0
-    
-    loop do   
+    while min < max do 
       mid = (min + max)/2
-      if self[mid] == number 
-        break
-      elsif self[mid] < number
-        min = mid + 1
-      else self[mid] > number
-        max = max - 1
-      end
+      return mid if self[mid] == element
+      self[mid] < element ? (min = mid + 1) : (max = mid - 1)
     end
-    mid
   end
 end
