@@ -2,7 +2,7 @@ class Array
   def index_of element
     min = 0
     max = self.length - 1
-    loop do 
+    while min <= max do 
       mid = (min + max)/2
       return mid if self[mid] == element
       if self[mid] < element
