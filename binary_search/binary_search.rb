@@ -1,5 +1,5 @@
 class Array
-  def index_of element
+  def bsearch_index(element)
     min = 0
     max = self.length - 1
     while min <= max do 
