@@ -1,19 +1,35 @@
-class Array
+def sort_bubble_way(arr)
+  indexes = arr.length-1
+  return arr if arr.length < 2
 
-  def sort_bubble_way
-    indexes = self.length-1
-    for i in 0..indexes do
-      for j in 0..indexes-i do
-        if self[j+1] == nil 
-          break
-        elsif self[j] > self[j+1]
-          self[j], self[j+1] = self[j+1], self[j]
-        else
-          next
-        end
+  loop do
+    swap = false
+    indexes.times do |index|
+      if arr[index] > arr[index+1]
+        arr[index], arr[index+1] = arr[index+1], arr[index]
+        swap = true
       end
     end
-    self
+    
+   break if !swap
   end
+  arr
 end
 
+=begin
+  for i in 0..indexes do
+    for j in 0..indexes-i do
+      if arr[j+1] == nil 
+        break
+      elsif arr[j] > arr[j+1]
+       arr[j], arr[j+1] = arr[j+1], arr[j]
+      else
+        next
+      end
+    end
+  end
+ arr
+end
+=end
+
+p sort_bubble_way([54, 2, 34, 0, 1, 17])
